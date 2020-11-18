@@ -6,18 +6,27 @@ class InputTodo extends Component {
     title: ""
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addTodoProps(this.state.title);
+    this.setState({
+      title:""
+    });
+  };
+
   onChange = e => {
     this.setState({
-      title: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
   render(){
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
       <input type="text"
       placeholder="Add stuff"
       value={this.state.title}
+      name="title"
       onChange={this.onChange} />
       <input type="submit" value= "submit" />
       </form>
