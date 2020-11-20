@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //component file
 import TodoContainer from "./components/TodoContainer"
+import "./App.css"
+
 ReactDOM.render(<div><TodoContainer /></div>, document.getElementById("root"))
 
 // If you want to start measuring performance in your app, pass a function
