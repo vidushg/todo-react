@@ -6,7 +6,7 @@ class Header extends React.Component {
     var x = Math.floor(Math.random()*256);
     var y = Math.floor(Math.random()*256);
     var z = Math.floor(Math.random()*256);
-
+ 
     var changeArray = ["now that's what i call a change!","changed","wow","what a change","fantastic!","great stuff"];
 
     var changeWord = changeArray[Math.floor(Math.random()*6)];
