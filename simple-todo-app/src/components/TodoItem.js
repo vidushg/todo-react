@@ -1,6 +1,38 @@
-import React from "react"
+import React, {useEffect} from "react"
 
-class TodoItem extends React.Component{
+
+const TodoItem = (props) => {
+  const completedStyle = {
+    fontStyle: "italic",
+    color: "#d35e0f",
+    opacity: 0.4,
+    textDecoration: "line-through",
+  }
+
+  const {completed, id, title} = props.todo
+
+  useEffect(() => {
+    return ()=>{
+      alert("Item deleted: "+title)
+    }
+  },[])
+
+  return(
+    <li className="todo-item">
+      <input
+        type="checkbox"
+        checked={completed}
+        onChange={() => props.handleChangeProps(id)}
+        />
+      <button onClick={() => props.deleteTodoProps(id)}>
+      Delete </button>
+      <span style={completed ? completedStyle: null}> {title}</span>
+      </li>
+  )
+}
+
+
+/*class TodoItem extends React.Component{
 
   componentWillUnmount(){
     alert("!Item will be deleted!")
@@ -26,6 +58,6 @@ class TodoItem extends React.Component{
       </span>
       </li>);
   }
-}
+}*/
 
 export default TodoItem
